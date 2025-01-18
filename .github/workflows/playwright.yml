@@ -26,19 +26,16 @@ jobs:
 
       # Bước 3: Cài đặt các phụ thuộc của dự án (npm install)
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm ci
+         
 
       # Bước 4: Cài đặt Playwright và các browser dependencies
       - name: Install Playwright
-        run: |
-          npm install playwright
-          npx playwright install
+        run: npx playwright install --with-deps
 
       # Bước 5: Chạy các bài kiểm tra Playwright
       - name: Run Playwright tests
-        run: |
-          npx playwright test
+        run: npx playwright test
 
       # Bước 6: Upload Playwright report as artifact
       - name: Upload Playwright report as artifact
